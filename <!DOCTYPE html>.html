@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Answer Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Answer Generator</h1>
+  <button id="generateBtn">Get Random Answer</button>
+  <p id="output">Click the button to get an answer!</p>
+
+  <!-- JavaScript -->
+  <script>
+    // List of possible answers
+    const answers = [
+      "Yes",
+      "No",
+      "Maybe",
+      "Ask again later",
+      "Definitely",
+      "Not sure",
+      "Absolutely not",
+      "Probably",
+      "It's a secret",
+      "Try again"
+    ];
+
+    // Function to get a random answer
+    function getRandomAnswer() {
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      return answers[randomIndex];
+    }
+
+    // Add event listener to the button
+    document.getElementById("generateBtn").addEventListener("click", function () {
+      const outputElement = document.getElementById("output");
+      outputElement.textContent = getRandomAnswer();
+    });
+  </script>
+</body>
+</html>
